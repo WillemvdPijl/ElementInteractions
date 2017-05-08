@@ -13,7 +13,6 @@ namespace ElementInteractions
         {
             if (Substance.State == "liquid")
             {
-                // Sinking calculation:
                 return SinkStateCases.LiquidSinkCase(item, Substance);
             }
             else
@@ -66,7 +65,7 @@ namespace ElementInteractions
             Item SinkingSubstanceWater = new Item("Water", water, 700, "liquid");
             Item SinkingSubstanceMercury = new Item("Mercury", mercury, 4, "liquid");
 
-            // Doing the interactions
+            // Interaction Examples
             /*
             Console.WriteLine(masterSword.Details());
             Console.WriteLine(glass.Details());
@@ -81,6 +80,7 @@ namespace ElementInteractions
             Console.WriteLine(SinkController(littleRock, SinkingSubstanceWater));
             */
 
+            // Doing the interactions
             Console.WriteLine(plank.State);
             Console.WriteLine(BurnController(plank));
             Console.WriteLine(plank.State);
