@@ -18,7 +18,9 @@ namespace ElementInteractions
         public Material(string name, double density, string burnreaction, bool conduction)
         {
             Name = name.ToLower();
-            Density = (density * Math.Pow(10, 3));
+            Density = density;
+            // Every density is actually * 10 ^ 3
+            // Density = (density * Math.Pow(10, 3));
             BurnReaction = burnreaction.ToLower();
             Conduction = conduction;
             

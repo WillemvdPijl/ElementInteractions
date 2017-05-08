@@ -42,10 +42,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BurnStateCases.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="Material.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SinkStateCases.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -4,3 +4,9 @@ E:\Stack\5. Code\Elements interactions\ElementInteractions\ElementInteractions\b
 E:\Stack\5. Code\Elements interactions\ElementInteractions\ElementInteractions\obj\Debug\ElementInteractions.csprojResolveAssemblyReference.cache
 E:\Stack\5. Code\Elements interactions\ElementInteractions\ElementInteractions\obj\Debug\ElementInteractions.exe
 E:\Stack\5. Code\Elements interactions\ElementInteractions\ElementInteractions\obj\Debug\ElementInteractions.pdb
+C:\Users\Willem\stack\5. Code\Elements interactions\ElementInteractions\ElementInteractions\bin\Debug\ElementInteractions.exe.config
+C:\Users\Willem\stack\5. Code\Elements interactions\ElementInteractions\ElementInteractions\bin\Debug\ElementInteractions.exe
+C:\Users\Willem\stack\5. Code\Elements interactions\ElementInteractions\ElementInteractions\bin\Debug\ElementInteractions.pdb
+C:\Users\Willem\stack\5. Code\Elements interactions\ElementInteractions\ElementInteractions\obj\Debug\ElementInteractions.csprojResolveAssemblyReference.cache
+C:\Users\Willem\stack\5. Code\Elements interactions\ElementInteractions\ElementInteractions\obj\Debug\ElementInteractions.exe
+C:\Users\Willem\stack\5. Code\Elements interactions\ElementInteractions\ElementInteractions\obj\Debug\ElementInteractions.pdb

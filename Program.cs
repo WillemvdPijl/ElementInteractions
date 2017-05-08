@@ -7,55 +7,40 @@ using System.Threading.Tasks;
 namespace ElementInteractions
 {
     class Program
-    {
-        public static string Sinking(Item item, Item Substance)
-        {   
-            //Is it a fluid?
-            if(Substance.State == "liquid") {
+    { 
+
+        public static string SinkController(Item item, Item Substance)
+        {
+            if (Substance.State == "liquid")
+            {
                 // Sinking calculation:
-                if (item.ItemMaterial.Name == Substance.ItemMaterial.Name)
-                {
-                    double previousWeight = Substance.Weight;
-                    Substance.Weight = Substance.Weight + item.Weight;
-                    return Substance.Name + " (" + previousWeight + ") + " + item.Name + " (" + item.Weight + ") = " + Substance.Name + " (" + Substance.Weight + ").";
-                }
-                else if (item.ItemMaterial.Density > Substance.ItemMaterial.Density)
-                {
-                    return item.Name + " will sink in " + Substance.Name + ".";
-                }
-                else
-                {
-                    return item.Name + " will float in " + Substance.Name + ".";
-                }
+                return SinkStateCases.LiquidSinkCase(item, Substance);
             }
             else
             {
-                return "You cannot sink into " + Substance.Name + " because it's not a liquid.";
+                return SinkStateCases.SolidSinkCase(item, Substance);
             }
         }
 
-        public static string Burning(Item item)
+        public static string BurnController(Item item)
         {
-            // Burning calculation:
             Console.WriteLine(item.Name + " " + item.ItemMaterial.BurnReaction + ".");
-            if (item.ItemMaterial.BurnReaction == "vaporizes")
+            if (item.ItemMaterial.BurnReaction == "vaporises")
             {
-                item.State = "gass";
-                return item.Name + " vaporized into " + item.State + ".";
+                return BurnStateCases.VaporiseBurnCase(item);
             }
             else if (item.ItemMaterial.BurnReaction == "burns" && item.State == "solid")
             {
-                item.State = "ash";
-                return item.Name + " burned into " + item.State + ".";
+                return BurnStateCases.SolidBurnCase(item);
             }
             else if (item.ItemMaterial.BurnReaction == "burns")
             {
-                item.State = "flames";
-                return item.Name + " burned into " + item.State + ".";
+                return BurnStateCases.NormalBurnCase(item);
+                
             }
             else
             {
-                return item.Name + " still " + item.ItemMaterial.BurnReaction + ".";
+                return BurnStateCases.AlternativeBurnCase(item);
             }
         }
 
@@ -65,7 +50,7 @@ namespace ElementInteractions
             Material stone = new Material("Stone", 2.55, "does nothing", false);
             Material wood = new Material("Wood", 0.75, "burns", false);
             Material iron = new Material("Iron", 7.87, "glows red", true);
-            Material water = new Material("Water", 1, "vaporizes", true);
+            Material water = new Material("Water", 1, "vaporises", true);
             Material mercury = new Material("Mercury", 13.53, "burns", true);
             Material glass = new Material("Glass", 2.55, "shatters", false);
 
@@ -86,13 +71,13 @@ namespace ElementInteractions
             Console.WriteLine(glass.Details());
             Console.WriteLine(masterSword.Name);
             Console.WriteLine(masterSword.ItemMaterial.Name);
-            Console.WriteLine(Burning(amountOfWater));
-            Console.WriteLine(Burning(plank));
-            Console.WriteLine(Burning(amountOfMercury));
-            Console.WriteLine(Sinking(amountOfWater, SinkingSubstanceWater));
-            Console.WriteLine(Sinking(mirror, SinkingSubstanceWater));
-            Console.WriteLine(Sinking(littleRock, SinkingSubstanceMercury));
-            Console.WriteLine(Sinking(littleRock, SinkingSubstanceWater));
+            Console.WriteLine(BurnController(amountOfWater));
+            Console.WriteLine(BurnController(plank));
+            Console.WriteLine(BurnController(amountOfMercury));
+            Console.WriteLine(SinkController(amountOfWater, SinkingSubstanceWater));
+            Console.WriteLine(SinkController(mirror, SinkingSubstanceWater));
+            Console.WriteLine(SinkController(littleRock, SinkingSubstanceMercury));
+            Console.WriteLine(SinkController(littleRock, SinkingSubstanceWater));
 
 
             // Keep the console window open in debug mode.
