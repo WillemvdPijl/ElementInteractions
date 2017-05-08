@@ -67,6 +67,7 @@ namespace ElementInteractions
             Item SinkingSubstanceMercury = new Item("Mercury", mercury, 4, "liquid");
 
             // Doing the interactions
+            /*
             Console.WriteLine(masterSword.Details());
             Console.WriteLine(glass.Details());
             Console.WriteLine(masterSword.Name);
@@ -78,7 +79,11 @@ namespace ElementInteractions
             Console.WriteLine(SinkController(mirror, SinkingSubstanceWater));
             Console.WriteLine(SinkController(littleRock, SinkingSubstanceMercury));
             Console.WriteLine(SinkController(littleRock, SinkingSubstanceWater));
+            */
 
+            Console.WriteLine(plank.State);
+            Console.WriteLine(BurnController(plank));
+            Console.WriteLine(plank.State);
 
             // Keep the console window open in debug mode.
             Console.WriteLine("Press any key to exit.");
